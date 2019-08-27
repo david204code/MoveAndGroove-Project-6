@@ -5,6 +5,7 @@ ruby '2.3.3'
 gem 'bootstrap', '~> 4.3', '>= 4.3.1'
 gem 'sprockets-rails', '~> 3.2', '>= 3.2.1'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
+gem 'devise', '~> 4.7'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
