@@ -12,6 +12,19 @@
   <% end %>
 
   <div class="actions">
+    
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+
+    <%= form.label :intensity %>
+    <%= form.text_field :intensity %>
+
+    <%= form.label :duration %>
+    <%= form.text_field :duration %>
+
     <%= form.submit %>
   </div>
 <% end %>
