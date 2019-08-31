@@ -5,7 +5,9 @@
 			<div class="navbar-header">
 				<%= link_to "Home", root_path, class: "navbar-brand" %>
 				<%= link_to "About", about_path, class: "navbar-brand" %>
-				<%= link_to "ActivitiesList", listofactivities_path, class: "navbar-brand" %>	
+				<%= link_to "ActivitiesList", listofactivities_path, class: "navbar-brand" %>
+				<%= link_to "Create Activity", new_activity_path, class: "navbar-brand" %>
+				<%= link_to "Show Created Activity", activities_path, class: "navbar_brand" %>	
 			</div>
 			<ul class="navbar-nav nav">
 				<li><%= link_to "Sign Up", new_user_registration_path %></li>
