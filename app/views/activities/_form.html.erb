@@ -1,46 +1,47 @@
-<%= form_with(model: activity, local: true) do |form| %>
-  <% if activity.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(activity.errors.count, "error") %> prohibited this activity from being saved:</h2>
 
-      <ul>
-      <% activity.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div class = "container">
+  
+  <%= form_with(model: activity, local: true) do |form| %>
+    <% if activity.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(activity.errors.count, "error") %> prohibited this activity from being saved:</h2>
+
+        <ul>
+        <% activity.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    
+    <div class = "row form-group col-md-4 actions">
+
+      <select class="custom-select" id="activity_title" name="activity[title]">
+          <option value="">Add Activity</option>
+          <option value="Running">Running</option>
+          <option value="Swimming">Swimming</option>
+          <option value="Cyling">Cyling</option>
+          <option value="Strength Training (Upper-Body)">Strength Training (Upper-Body)</option>
+          <option value="Strength Training (Lower-Body)">Strength Training (Lower-Body)</option>
+          <option value="Rowling">Rowling</option>
+          <option value="Walking">Walking</option>
+          <option value="Stretching">Stretching</option>
+          <option value="Coordination & Balance">Coordination & Balance</option>
+      </select>
+     
+    </div>
+
+    <div class="actions">
+      <%= form.label :description %>
+      <%= form.text_area :notes %>
+
+      <%= form.label :intensity %>
+      <%= form.text_field :intensity %>
+
+      <%= form.label :duration %>
+      <%= form.text_field :duration %>
+
+      <%= form.submit %>
     </div>
   <% end %>
-
-  <div class = "form-group form-control card shadow col-md-8 mx-auto">
-    <%= form.select(:title, options_for_select(['Walking', 'Running'])) %>
-  </div>
-
-  <div class="actions">
-    <select class="custom-select">
-      <option selected>Available Activities</option>
-      <option value="1">Running</option>
-      <option value="2">Swimming</option>
-      <option value="3">Cyling</option>
-      <option value="4">Strength Training (upperbody)</option>
-      <option value="5">Strength Traning (lowerbody)</option>
-      <option value="6">Core Workout</option>
-      <option value="7">Rowling (upperbody)</option>
-      <option value="8">Walking</option>
-      <option value="9">Stretching</option>
-      <option value="10">Coordination & Balance</option>
-
-    </select>
-   
-
-    <%= form.label :description %>
-    <%= form.text_area :notes %>
-
-    <%= form.label :intensity %>
-    <%= form.text_field :intensity %>
-
-    <%= form.label :duration %>
-    <%= form.text_field :duration %>
-
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
