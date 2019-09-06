@@ -11,6 +11,10 @@
     </div>
   <% end %>
 
+  <div class = "form-group form-control card shadow col-md-8 mx-auto">
+    <%= form.select(:title, options_for_select(['Walking', 'Running'])) %>
+  </div>
+
   <div class="actions">
     <select class="custom-select">
       <option selected>Available Activities</option>
@@ -26,8 +30,7 @@
       <option value="10">Coordination & Balance</option>
 
     </select>
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+   
 
     <%= form.label :description %>
     <%= form.text_area :notes %>
