@@ -1,5 +1,5 @@
 
-<div class = "container">
+<div class = "container m-5 p-3">
   
   <%= form_with(model: activity, local: true) do |form| %>
     <% if activity.errors.any? %>
@@ -14,34 +14,55 @@
       </div>
     <% end %>
     
-    <div class = "row form-group col-md-4 actions">
-
-      <select class="custom-select" id="activity_title" name="activity[title]">
-          <option value="">Add Activity</option>
-          <option value="Running">Running</option>
-          <option value="Swimming">Swimming</option>
-          <option value="Cyling">Cyling</option>
-          <option value="Strength Training (Upper-Body)">Strength Training (Upper-Body)</option>
-          <option value="Strength Training (Lower-Body)">Strength Training (Lower-Body)</option>
-          <option value="Rowling">Rowling</option>
-          <option value="Walking">Walking</option>
-          <option value="Stretching">Stretching</option>
-          <option value="Coordination & Balance">Coordination & Balance</option>
-      </select>
-     
+    <div class = "row">
+      <div class ="form-group col-md-6 text-center mx-auto">
+        <p>Complete this form and keep track of your workout!</p>
+        <select class="custom-select" id="activity_title" name="activity[title]">
+            <option value="">Add Activity</option>
+            <option value="Running">Running</option>
+            <option value="Swimming">Swimming</option>
+            <option value="Cyling">Cyling</option>
+            <option value="Strength Training (Upper-Body)">Strength Training (Upper-Body)</option>
+            <option value="Strength Training (Lower-Body)">Strength Training (Lower-Body)</option>
+            <option value="Core Workout">Core Workout</option>
+            <option value="Rowling">Rowling</option>
+            <option value="Walking">Walking</option>
+            <option value="Stretching">Stretching</option>
+            <option value="Coordination & Balance">Coordination & Balance</option>
+        </select>
+      </div>     
     </div>
 
-    <div class="actions">
-      <%= form.label :description %>
-      <%= form.text_area :notes %>
+    <div class="row">
+      <div class="form-group text-center col-md-4 mx-auto">    
+        <p>How intense was your workout?</p>
+        <select class="custom-select" id="activity_intensity" name="activity[intensity]">
+            <option value="">Select intensity</option>
+            <option value="light">Light</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>            
+        </select>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="form-group text-center col-md-3 mx-auto">        
+        <%= form.label :duration %>
+        <%= form.text_field :duration, class:'form-control', placeholder: 'e.g 30 minutes' %>
+      </div>
+    </div>
 
-      <%= form.label :intensity %>
-      <%= form.text_field :intensity %>
-
-      <%= form.label :duration %>
-      <%= form.text_field :duration %>
-
-      <%= form.submit %>
+    <div class="row">
+      <div class="form-group text-center col-md-8 mx-auto">
+        <%= form.label :notes %>
+        <%= form.text_area :notes, class:'form-control', rows:'4' %>
+      </div>
+    </div>
+          
+    <div class="row">
+      <div class="form-group mx-auto">
+        <%= form.submit "Submit", class: 'btn btn-light btn-lg btn-outline-success' %>
+      </div>
     </div>
   <% end %>
 </div>
