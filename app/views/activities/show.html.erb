@@ -1,14 +1,49 @@
 <div class="container">
-  <div class="card m-4 p-4 shadow col-md-8 mx-auto">
+  <div class="card m-4 p-4 shadow col-md-10 mx-auto text-center">
     <p id="notice"><%= notice %></p>
-    
-    <h3><%= @activity.title %></h3>
-    <h3><%= @activity.intensity %></h3>
-    <h3><%= @activity.duration %></h3>
-    <h3><%= @activity.notes %></h3>
-    <h3><%= @activity.workout_date %></h3>
-    <h3><%= @activity.created_at %></h3>
-    <h3><%= @activity.updated_at %></h3>
+    <h3 class="text-center display-3 text-info"><%= @activity.title %></h3>
+    <p><%= @activity.workout_date %></p>
+
+
+    <div class="row">
+
+      <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title"><%= @activity.intensity %></h5>
+              <h6 class="card-subtitle mb-2 text-muted">This is the intensity of your workout</h6>
+            </div>
+          </div>
+      </div>
+
+      <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title"><%= @activity.duration %></h5>
+              <h6 class="card-subtitle mb-2 text-muted">This is the duration of your workout</h6>
+            </div>  
+          </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+      
+      <div class="col-md-6 text-center mx-auto">
+        <div class="">
+          <div class="card-body">
+            <h5 class="card-title">Notes</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Notes you have written for this workout</h6>
+            <p class="card-text"><%= @activity.notes %></p>
+          </div>  
+        </div>
+      </div>
+
+    </div>
+     
+      
+    <p><%= @activity.created_at %></p>
+    <p><%= @activity.updated_at %></p>
 
     <%= link_to 'Edit', edit_activity_path(@activity) %> 
     <%= link_to 'Back', activities_path %>
