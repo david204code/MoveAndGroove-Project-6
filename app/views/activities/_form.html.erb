@@ -1,5 +1,5 @@
 
-<div class = "container m-5 p-3">
+<div class = "container">
   
   <%= form_with(model: activity, local: true) do |form| %>
     <% if activity.errors.any? %>
@@ -16,7 +16,7 @@
     
     <div class = "row">
       <div class ="form-group col-md-6 text-center mx-auto">
-        <p>Complete this form and keep track of your workout!</p>
+        <p>Please select the title of the activity</p>
         <select class="custom-select" id="activity_title" name="activity[title]">
             <option value="">Add Activity</option>
             <option value="Running">Running</option>
@@ -30,39 +30,33 @@
             <option value="Stretching">Stretching</option>
             <option value="Coordination & Balance">Coordination & Balance</option>
         </select>
-      </div>     
-    </div>
-
-    <div class="row">
-      <div class="form-group text-center col-md-4 mx-auto">    
-        <p>How intense was your workout?</p>
+      </div>   
+      <div class="form-group text-center col-md-6 mx-auto">    
+        <p>Select the intensity of your workout!</p>
         <select class="custom-select" id="activity_intensity" name="activity[intensity]">
             <option value="">Select intensity</option>
             <option value="light">Light</option>
             <option value="medium">Medium</option>
             <option value="hard">Hard</option>            
         </select>
-      </div>
+      </div>  
     </div>
-    
-    <div class="row">
-      <div class="form-group text-center col-md-3 mx-auto">        
+
+    <div class="row">    
+      <div class="form-group text-center col-md-6 mx-auto">        
         <%= form.label :duration %>
         <%= form.text_field :duration, class:'form-control', placeholder: 'e.g 30 minutes' %>
       </div>
-    </div>
-
-    <div class="row">
-      <div class="form-group text-center col-md-3 mx-auto">        
+      <div class="form-group text-center col-md-6 mx-auto">        
         <%= form.label :"When did you workout?" %>
         <%= form.text_field :workout_date, class:'form-control', placeholder: 'yyyy/mm/dd' %>
       </div>
     </div>
 
     <div class="row">
-      <div class="form-group text-center col-md-8 mx-auto">
+      <div class="form-group text-center col-md-12 mx-auto">
         <%= form.label :notes %>
-        <%= form.text_area :notes, class:'form-control', rows:'4' %>
+        <%= form.text_area :notes, class:'form-control', rows:'4', placeholder: 'write down some notes to keep tract of your workout' %>
       </div>
     </div>
           
