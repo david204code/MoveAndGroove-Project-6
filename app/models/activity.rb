@@ -1,6 +1,5 @@
 class Activity < ApplicationRecord
   validates :title, presence: true
-  validates :notes, presence: true
   validates :intensity, presence: true 
   validates :duration, presence: true
   validates :workout_date, presence: true

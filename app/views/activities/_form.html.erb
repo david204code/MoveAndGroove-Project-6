@@ -53,6 +53,13 @@
     </div>
 
     <div class="row">
+      <div class="form-group text-center col-md-3 mx-auto">        
+        <%= form.label :"When did you workout?" %>
+        <%= form.text_field :workout_date, class:'form-control', placeholder: 'yyyy/mm/dd' %>
+      </div>
+    </div>
+
+    <div class="row">
       <div class="form-group text-center col-md-8 mx-auto">
         <%= form.label :notes %>
         <%= form.text_area :notes, class:'form-control', rows:'4' %>
