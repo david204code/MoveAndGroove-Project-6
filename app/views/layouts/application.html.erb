@@ -10,16 +10,17 @@
   </head>
 
   <body>
-    <div class="card">
+    <div class="card", style="background-color: #e8e8e8">
       <%= render 'layouts/header' %>
             
       <div class="container">
         <%= yield %>
       </div>
     
-    </div>
+    
     <%= render 'layouts/footer' %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    </div>
   </body>
 </html>
