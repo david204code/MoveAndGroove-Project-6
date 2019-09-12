@@ -36,7 +36,7 @@
 	<div class="container">
 		
 		<div class="row">
-			<div class="col-md-8 p-2 btn-group">
+			<div class="col-md-8 offset-md-2 p-2 btn-group">
 				<%= link_to "Home", root_path, class: "btn btn-outline-dark font-italic font-weight-bolder", style: "font-size:1.75rem" %>
 				<%= link_to "Who we are", about_path, class: "btn btn-outline-dark font-italic font-weight-bolder", style: "font-size:1.75rem" %>
 				<%= link_to "What we offer", listofactivities_path, class: "btn btn-outline-dark font-italic font-weight-bolder", style: "font-size:1.75rem" %>
@@ -44,8 +44,8 @@
 			
 		</div>
 		
-		<div class="row">
-			<div class="col-md-4 p-2">
+		<div class="row text-center">
+			<div class="col-md-12 p-2">
 				<% if user_signed_in? %>
 				<%= link_to "Add Activity", new_activity_path, class: "btn btn-outline-success", style: "font-size:1.0rem" %>
 				<%= link_to "Your Activities", activities_path, class: "btn btn-outline-success", style: "font-size:1.0rem" %>

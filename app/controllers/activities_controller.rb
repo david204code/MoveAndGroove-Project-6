@@ -5,7 +5,7 @@ class ActivitiesController < ApplicationController
   # GET /activities
   # GET /activities.json
   def index
-    @activities = Activity.all
+    @activities = current_user.activities.all
   end
 
   # GET /activities/1
@@ -15,7 +15,7 @@ class ActivitiesController < ApplicationController
 
   # GET /activities/new
   def new
-    @activity = Activity.new
+    @activity = Activity.new(user:current_user)
   end
 
   # GET /activities/1/edit
@@ -26,7 +26,7 @@ class ActivitiesController < ApplicationController
   # POST /activities.json
   def create
     @activity = Activity.new(activity_params)
-    @activity.user = current_user
+    @activity.user_id = current_user.id
 
     respond_to do |format|
       if @activity.save

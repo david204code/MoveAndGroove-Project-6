@@ -18,12 +18,11 @@
         <tbody>
           <% @activities.each do |activity| %>
             <tr>
-              <td><p><%= activity.title %> </p></td>
-              <td><%= activity.intensity %></td>
+              <td class="text-capitalize"><p><%= activity.title %> </p></td>
+              <td class="text-capitalize"><%= activity.intensity %></td>
               <td><%= activity.duration %></td>
               <td><%= activity.workout_date %></td>  
-              <td><%= link_to 'View', activity %></td>
-              
+              <td><%= link_to 'View', activity %></td>              
             </tr>          
           <% end %>
           
