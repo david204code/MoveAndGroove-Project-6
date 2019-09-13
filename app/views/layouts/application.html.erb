@@ -13,13 +13,13 @@
 
     <div class="card", style="background-color: #edeef4">
       <%= render 'layouts/header' %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
             
       <div class="container">
         <%= yield %>
       </div>    
 
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
       <%= render 'layouts/footer' %>
     </div>
 
