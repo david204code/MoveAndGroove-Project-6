@@ -7,7 +7,7 @@ class Activity < ApplicationRecord
   belongs_to :user
 
   Activity_list = ["Running", "Swimming", "Cyling", "Strength Training (Upper-Body)",
-  "Strength Training (Lower-Body)", "Core Workout", "Rowling", "Walking", "Stretching",
+  "Strength Training (Lower-Body)", "Core Workout", "Rowing", "Walking", "Stretching",
   "Coordination & Balance"]
 
   Activity_intensity = ["Light","Medium","Hard"]
